@@ -1,0 +1,2 @@
+export const TASK_REPOSITORY = Symbol('TASK_REPOSITORY');
+export const CATEGORY_REPOSITORY = Symbol('CATEGORY_REPOSITORY');
