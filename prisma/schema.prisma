@@ -7,22 +7,18 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model User {
-  id    String @id @default(uuid())
-  name  String
-  email String @unique
-}
-
-model Category {
+model Director {
   id   String @id @default(uuid())
   name String
-  tasks Task[]
+  nationality String
+  birth_day String
+  movies Movie[]
 }
 
-model Task {
+model Movie {
   id         String   @id @default(uuid())
   title      String
-  completed  Boolean  @default(false)
-  categoryId String
-  category   Category @relation(fields: [categoryId], references: [id])
+  year  String
+  directorId String
+  director   Director @relation(fields: [directorId], references: [id])
 }
